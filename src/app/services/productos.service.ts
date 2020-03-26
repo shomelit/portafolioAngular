@@ -21,7 +21,6 @@ export class ProductosService {
              .subscribe((resp:Producto[]) =>{
                this.productos = resp;
                this.cargando = false;
-                console.log(resp);
                /* setTimeout( ()=> {
                 this.cargando = false;
                 },2000);*/
@@ -63,7 +62,7 @@ export class ProductosService {
 
       termino = termino.toLocaleLowerCase();
       this.productosFiltrados= [];
-      
+
       this.productos.forEach( prod=>{
         const titulo = prod.titulo.toLocaleLowerCase()
         if(prod.categoria.indexOf(termino)>=0  || titulo.indexOf(termino)>=0){
